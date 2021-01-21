@@ -1,27 +1,50 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <el-header id="main-header">
+    <div class="site-title">DevPortal</div>
+  </el-header>
+  <el-container>
+    <el-aside id="aside-left">
+      <AppMenu/>
+    </el-aside>
+    <el-main>
+      <router-view />
+    </el-main>
+  </el-container>
+  <el-footer> </el-footer>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import { defineComponent } from "vue";
+import AppMenu from "@/components/AppMenu.vue";
 
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
+export default defineComponent({
+  components: { AppMenu }
+});
 </script>
 
 <style lang="scss">
+body {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-header {
+  display: flex;
+  background-color: #80CBC4;
+
+  div.site-title {
+    color: #000;
+    height: 100%;
+    font-weight: 500;
+    line-height: 60px;
+  }
+}
+
+#aside-left {
+  min-height: 60vh;
 }
 </style>
