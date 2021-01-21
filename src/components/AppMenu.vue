@@ -2,8 +2,6 @@
     <el-menu
       default-active="1"
       class="el-menu-vertical-demo"
-      @open="handleOpen"
-      @close="handleClose"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b">
@@ -23,7 +21,7 @@
       </el-menu-item>
       <el-menu-item index="4">
         <i class="el-icon-trophy"></i>
-        <span>Most Upvoted</span>
+        <span>Most liked</span>
       </el-menu-item>
     </el-menu>
 </template>

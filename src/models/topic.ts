@@ -4,8 +4,8 @@ interface Topic {
     title: string;
     body: string;
     createdAt: Date;
-    upvotes: number;
-    downvotes: number;
+    liked: boolean;
+    likes: number;
     comments: Array<Comment>;
     commentsCount: number;
 }

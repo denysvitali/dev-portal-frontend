@@ -1,22 +1,14 @@
 <template>
-  <div class="topic-entry">
-    <div class="topic--left">
-      <div class="topic--vote">
+  <div class="topic-detail">
+    <div class="topic-detail--left">
+      <div class="topic-detail--vote-container">
         <topic-vote :topic="topic"/>
       </div>
     </div>
-
-    <div class="topic--right">
-      <div class="topic--main">
-        <div class="topic--title">
-          <router-link :to="'/topics/' + topic.id">{{ topic.title }}</router-link>
-        </div>
-        <div class="topic--content">{{ topic.body }}</div>
-      </div>
-
-      <div class="topic--footer">
-        <div class="topic--posted-by">{{ formatAuthorName }}</div>
-        <div class="topic--posted-on">{{ createdAt }}</div>
+    <div class="topic-detail--right">
+      <h2 class="topic-title">{{ topic.title }}</h2>
+      <div class="topic-content">
+        {{ topic.body }}
       </div>
     </div>
   </div>
@@ -25,13 +17,24 @@
 <style lang="scss" scoped>
 @import "@/variables/_colors.scss";
 
-div.topic-entry {
+div.topic-detail {
   display: flex;
   border-bottom: 1px solid $lightBorderColor;
   margin-bottom: 25px;
 
-  div.topic--right {
+  div.topic-detail--left {
+    div.topic-detail--vote-container {
+      margin-top: 10px;
+    }
+  }
+
+  div.topic-detail--right {
     margin-left: 10px;
+
+    h2.topic-title {
+      margin-top: 0;
+    }
+
     div.topic--main {
       div.topic--title {
         font-size: 1em;
@@ -65,13 +68,14 @@ div.topic-entry {
 import { defineComponent, PropType } from "@vue/composition-api";
 import { Topic } from "@/models/topic";
 import TopicVote from "@/components/TopicVote.vue";
+
 import moment from "moment";
 
 export default defineComponent({
   components: { TopicVote },
   props: {
     topic: {
-      type: Object as PropType<Topic>
+      type: Object as PropType<Topic>,
     }
   },
   computed: {

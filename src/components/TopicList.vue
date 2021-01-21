@@ -1,5 +1,4 @@
 <template>
-  <h3>Trending</h3>
   <div class="topics--container">
     <div class="topics--entry" v-for="(item, idx) in this.topics" v-bind:key="idx">
       <topic-entry v-bind:key="idx" v-bind:topic="item" />

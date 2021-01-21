@@ -1,6 +1,8 @@
 <template>
   <el-header id="main-header">
-    <div class="site-title">DevPortal</div>
+    <router-link to="/">
+      <div class="site-title">DevPortal</div>
+    </router-link>
   </el-header>
   <el-container>
     <el-aside id="aside-left">
