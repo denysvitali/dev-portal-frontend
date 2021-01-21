@@ -5,6 +5,8 @@
 Frontend for [dev-portal](https://github.com/denysvitali/dev-portal) - still WIP.
 PRs are always welcome!
 
+![dev-portal-intro](./docs/pictures/intro-1.png)
+
 ---
 
 A StackOverflow / Reddit / Disqus / Talkyard clone that aims at being the followings:
