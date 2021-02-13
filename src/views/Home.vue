@@ -1,5 +1,5 @@
 <template>
-    <h2 class="nomargin">Topic List</h2>
+    <el-button type="primary" plain>Primary</el-button>
     <topic-list v-bind:topics="this.topics"/>
 </template>
 
@@ -21,7 +21,7 @@ export default defineComponent({
       return { topics: [] as Array<Topic> }
   },
   async mounted(){
-      const req = new Request("http://127.0.0.1:8081/api/v1/topics/");
+      const req = new Request("http://127.0.0.1:8080/api/v1/topics/");
       const res = await fetch(req);
       this.$data.topics = await res.json() as Array<Topic>;
   }

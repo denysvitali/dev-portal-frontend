@@ -7,8 +7,10 @@ import router from "./router";
 
 import 'element-plus/lib/theme-chalk/index.css';
 
+// Get config
+
 createApp(App)
-  .use(store)
-  .use(router)
-  .use(ElementPlus)
-  .mount("#app");
+.use(store)
+.use(router)
+.use(ElementPlus)
+.mount("#app");
