@@ -1,38 +1,48 @@
 <template>
-    <el-menu
-      default-active="1"
-      class="el-menu-vertical-demo"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b">
-      <el-menu-item index="1">
-        <template #title>
-          <i class="el-icon-s-home"></i>
-          <span>Home</span>
-        </template>
-      </el-menu-item>
-      <el-menu-item index="2">
-        <i class="el-icon-s-data"></i>
-        <span>Trending</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-chat-round"></i>
-        <span>Most discussed</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-trophy"></i>
-        <span>Most liked</span>
-      </el-menu-item>
-    </el-menu>
+  <div class="sidebar">
+    <template v-for="menuItem in menuItems" :key="menuItem.title">
+      <router-link :to="menuItem.to" custom v-slot="{ navigate }">
+        <menu-item 
+          :title="menuItem.title" 
+          :icon="menuItem.icon"
+          :selected="menuItem.to == currentPath"
+          @click="navigate" @keypress.enter="navigate" role="link"
+        />
+      </router-link>
+    </template>
+  </div>
 </template>
+
+<style lang="scss" scoped>
+  .sidebar {
+    margin: 40px 20px 0px 20px;
+  }
+</style>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import MenuItem from "@/components/MenuItem.vue";
+
+import { faComments, faFireAlt, faListUl, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
 export default defineComponent({
-  components: {},
+  components: { MenuItem },
   data() {
-      return {};
+      return {
+        menuItems: [
+          {title: "New", to: "/new", icon: faComments},
+          {title: "Hot", to: "/hot", icon: faFireAlt},
+          {title: "Popular", to: "/popular", icon: faThumbsUp},
+          {title: "Categories", to: "/categories", icon: faListUl},
+        ],
+        currentPath: '/',
+      };
+  },
+
+  watch: {
+    $route(to){
+      this.currentPath = to.path;
+    }
   }
 });
 </script>

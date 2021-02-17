@@ -15,8 +15,6 @@
 </template>
 
 <style lang="scss" scoped>
-@import "@/variables/_colors.scss";
-
 div.topic-detail {
   display: flex;
   border-bottom: 1px solid $lightBorderColor;

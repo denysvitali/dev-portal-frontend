@@ -21,9 +21,13 @@ export default defineComponent({
       return { topics: [] as Array<Topic> }
   },
   async mounted(){
-      const req = new Request("http://127.0.0.1:8080/api/v1/topics/");
-      const res = await fetch(req);
-      this.$data.topics = await res.json() as Array<Topic>;
+      try {
+        const req = new Request("http://127.0.0.1:8080/api/v1/topics/");
+        const res = await fetch(req);
+        this.$data.topics = await res.json() as Array<Topic>;
+      } catch(e) {
+          console.warn(`Unable to load topics: ${e}`);
+      }
   }
 });
 </script>

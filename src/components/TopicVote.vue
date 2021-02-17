@@ -8,7 +8,6 @@
 </template>
 
 <style lang="scss">
-@import "@/variables/_colors.scss";
 .topic--vote--heart:not(.active) svg path {
   stroke: $heartDeactivatedColor;
   fill: transparent;
