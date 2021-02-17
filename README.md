@@ -1,15 +1,10 @@
 # dev-portal-frontend
 
-## Description
-
-Frontend for [dev-portal](https://github.com/denysvitali/dev-portal) - still WIP.
-PRs are always welcome!
-
 ![dev-portal-intro](./docs/pictures/intro-1.png)
 
----
+## Description
 
-A StackOverflow / Reddit / Disqus / Talkyard clone that aims at being the followings:
+Frontend for [dev-portal](https://github.com/denysvitali/dev-portal), a StackOverflow / Reddit / Disqus / Talkyard clone that aims at being the followings:
 
 - Knowledge Base
 - Q&A portal
@@ -18,6 +13,16 @@ A StackOverflow / Reddit / Disqus / Talkyard clone that aims at being the follow
 - Code search platform
 
 ... with a strong focus on productivity.
+
+
+## Project Status
+
+Still WIP.  
+  
+The UI is being designed based on this [Design Reference](https://github.com/denysvitali/dev-portal-designs), and the backend is developed
+along the way.
+
+---
 
 
 ## Project setup
