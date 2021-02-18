@@ -1,9 +1,17 @@
 <template>
-    <el-button type="primary" plain>Primary</el-button>
+    <div class="actions">
+        <el-button type="primary">New Topic</el-button>
+    </div>
     <topic-list v-bind:topics="this.topics"/>
 </template>
 
 <style lang="scss">
+
+div.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
 h2 {
     margin-top: 0;
     margin-bottom: 1em;

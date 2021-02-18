@@ -1,8 +1,10 @@
 <template>
   <div class="topic-entry">
     <div class="topic--left">
-      <div class="topic--vote">
-        <topic-vote :topic="topic"/>
+      <div class="topic--author">
+        <img src="https://picsum.photos/200" class="profile-picture"/>
+        <div class="full-name">{{ formatAuthorName }}</div>
+        <div class="department">{{ department }}</div>
       </div>
     </div>
 
@@ -15,7 +17,6 @@
       </div>
 
       <div class="topic--footer">
-        <div class="topic--posted-by">{{ formatAuthorName }}</div>
         <div class="topic--posted-on">{{ createdAt }}</div>
       </div>
     </div>
@@ -23,6 +24,25 @@
 </template>
 
 <style lang="scss" scoped>
+div.topic--author {
+  width: 100px;
+  text-align: center;
+
+  img.profile-picture {
+    $size: 60px;
+    width: $size;
+    height: $size;
+    margin-bottom: 4px;
+    border-radius: $size;
+  }
+
+  div.full-name {
+    color: $profileNameColor;
+    font-weight: 500;
+    font-size: 0.8em;
+  }
+}
+
 div.topic-entry {
   display: flex;
   border-bottom: 1px solid $lightBorderColor;
@@ -66,7 +86,7 @@ import TopicVote from "@/components/TopicVote.vue";
 import moment from "moment";
 
 export default defineComponent({
-  components: { TopicVote },
+  components: { },
   props: {
     topic: {
       type: Object as PropType<Topic>

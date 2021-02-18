@@ -20,9 +20,9 @@
     <div id="aside-left">
       <AppMenu />
     </div>
-    <el-main>
+    <div class="main-content">
       <router-view />
-    </el-main>
+    </div>
   </el-container>
   <el-footer> </el-footer>
 </template>
@@ -72,6 +72,7 @@ $sidebarWidth: 260px;
   display: flex;
   align-items: center;
   height: 80px;
+  margin-bottom: 20px;
   $headerPadding: 50px;
 
   div.logo-section {
@@ -91,7 +92,7 @@ $sidebarWidth: 260px;
   div.header-right {
     display: flex;
     width: $sidebarWidth;
-    justify-content: space-around;
+    margin-right: $headerRightSpace;
 
     div.profile-actions {
       display: flex;
@@ -99,7 +100,7 @@ $sidebarWidth: 260px;
       flex-grow: 1;
       
       column-gap: 10px;
-      justify-content: center;
+      justify-content: flex-end;
       
       align-items: center;
       color: #AAA;
@@ -119,6 +120,13 @@ $sidebarWidth: 260px;
       }
     }
   }
+}
+
+div.main-content{
+  padding: 0;
+  margin-right: $headerRightSpace;
+  margin-left: $headerRightSpace;
+  width: 100%;
 }
 
 #aside-left {

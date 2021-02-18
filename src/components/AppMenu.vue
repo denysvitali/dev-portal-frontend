@@ -15,7 +15,7 @@
 
 <style lang="scss" scoped>
   .sidebar {
-    margin: 40px 20px 0px 20px;
+    margin: 0px 20px 0px 20px;
   }
 </style>
 
